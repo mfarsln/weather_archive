@@ -5,8 +5,8 @@ from datetime import datetime
 def download_maps():
     base_url = "https://www.wetterzentrale.de/maps/"
     models = {
-        "GFS": {"prefix": "GFSOPEU", "runs": ["00", "12"], "steps": ["0", "24", "48", "72", "120"]},
-        "ECMWF": {"prefix": "ECMOPEU", "runs": ["00", "12"], "steps": ["0", "24", "48", "72", "120"]}
+        "GFS": {"prefix": "GFSOPEU", "runs": ["00", "12"], "steps": ["0", "24", "48", "72", "96", "120", "144", "168", "192", "216", "240"]},
+        "ECMWF": {"prefix": "ECMOPEU", "runs": ["00", "12"], "steps": ["0", "24", "48", "72", "96", "120", "144", "168", "192", "216", "240"]}
     }
     
     today = datetime.now().strftime('%Y-%m-%d')
@@ -30,4 +30,5 @@ def download_maps():
                     print(f"Hata {filename}: {e}")
 
 if __name__ == "__main__":
+
     download_maps()
