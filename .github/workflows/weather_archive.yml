@@ -2,9 +2,10 @@ name: Daily Weather Archive
 
 on:
   schedule:
-    # TSİ 08:30 ve 20:30 (UTC 05:30 ve 17:30)
-    - cron: '30 5,17 * * *'
-  workflow_dispatch: # Manuel çalıştırma butonu ekler
+    # 08:15 UTC = 11:15 TSİ (Hem GFS 00z hem ECMWF 00z bitti)
+    # 19:15 UTC = 22:15 TSİ (Hem GFS 12z hem ECMWF 12z bitti)
+    - cron: '15 8,19 * * *'
+  workflow_dispatch: # Manuel çalıştırma hakkınız saklı kalsın
 
 jobs:
   archive_job:
